@@ -43,11 +43,7 @@ function titleClickHandler(event){
 
 }
 
-const links = document.querySelectorAll('.titles a');
 
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
-}
 
 // final part //
 
@@ -89,6 +85,13 @@ function generateTitleLinks(){
     html = html + linkHTML;
 }
 titleList.innerHTML = html;
+
+const links = document.querySelectorAll('.titles a');
+console.log(links);
+
+for(let link of links){
+  link.addEventListener('click', titleClickHandler);
+}
 
 }
 
