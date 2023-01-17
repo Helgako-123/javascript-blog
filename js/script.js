@@ -64,10 +64,10 @@ function generateTitleLinks(){
   /* for each article */
 
   const articles = document.querySelectorAll('.post');
+  let html = '';
 
   for(let article of articles){
     console.log(article);
-}
 
     /* get the article id */
     const articleId = document.getElementById('id');
@@ -82,8 +82,13 @@ function generateTitleLinks(){
     /* create HTML of the link */
 
     const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    console.log(linkHTML);
 
     /* insert link into titleList */
+
+    html = html + linkHTML;
+}
+titleList.innerHTML = html;
 
 }
 
