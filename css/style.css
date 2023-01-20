@@ -1,0 +1,36 @@
+*  {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+aside {
+    width: 7em;
+    flex-grow: 1;
+    margin: 0.5em;
+}
+
+.posts {
+    width: 150px;
+    flex-grow: 4;
+    margin: 0.5em;
+}
+
+li {
+    list-style-type: none;
+}
+
+
