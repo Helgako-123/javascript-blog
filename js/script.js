@@ -9,8 +9,8 @@ function titleClickHandler(event){
   const activeLinks = document.querySelectorAll('.titles a.active');
 
   for(let activeLink of activeLinks){
-  activeLink.classList.remove('active');
-}
+    activeLink.classList.remove('active');
+  }
 
   /* [DONE] add class 'active' to the clicked link */
  
@@ -21,8 +21,8 @@ function titleClickHandler(event){
   const activeArticles = document.querySelectorAll('.posts .post.active');
 
   for(let activeArticle of activeArticles){
-  activeArticle.classList.remove('active');
-}
+    activeArticle.classList.remove('active');
+  }
 
   /* [DONE] get 'href' attribute from the clicked link */
 
@@ -76,14 +76,14 @@ function generateTitleLinks(){
     /* insert link into titleList */
 
     html = html + linkHTML;
-}
-titleList.innerHTML = html;
+  }
+  titleList.innerHTML = html;
 
-const links = document.querySelectorAll('.titles a');
+  const links = document.querySelectorAll('.titles a');
 
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
-}
+  for(let link of links){
+    link.addEventListener('click', titleClickHandler);
+  }
 
 }
 
