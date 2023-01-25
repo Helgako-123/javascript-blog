@@ -211,12 +211,12 @@ function generateAuthors() {
     /*for(let tag of articleTagsArray) {
 
       /* generate HTML of the link */ 
-     const linkHTML = '<p class="post-author">' + 'by' + articleAuthors + '</p>';
+    const linkHTML = '<a href="#author-' + articleAuthors + '">' + 'by ' +articleAuthors + '</a>';
       
-      /* add generated code to html variable */
-      html = html + linkHTML;
+    /* add generated code to html variable */
+    html = html + linkHTML;
     
-      /* END LOOP: for each tag */
+    /* END LOOP: for each tag */
     
 
     /* insert HTML of all the links into the tags wrapper */
