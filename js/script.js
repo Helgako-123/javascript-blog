@@ -114,13 +114,12 @@ function calculateTagsParams(tags) {
 }
 
 function calculateTagClass (count, params) {
-  const tagLinkHTML = '<li><a href="#tag-" class=""><span>' + calculateTagClass(allTags[tag], tagsParams) + '</span></a></li>';
-  console.log('tagLinkHTML:', tagLinkHTML);
   const normalizedCount = count - params.min;
   const normalizedMax = params.max - params.min;
   const percentage = normalizedCount / normalizedMax;
   const classNumber = Math.floor( percentage * (optCloudClassCount - 1) + 1 );
-  
+  const result = ${optCloudClassPrefix}${classNumber};
+  return result;
 }
 
 function generateTags() {
@@ -182,6 +181,7 @@ function generateTags() {
   /* [NEW] START LOOP; for each tag in allTags: */
   for (let tag in allTags) {
     /* [NEW] generate code of a link and add it to allTagsHTML */
+    const tagLinkHTML = '<li><a href="#tag-" class=""><span>' + calculateTagClass(allTags[tag], tagsParams) + '</span></a></li>';
     allTagsHTML += tagLinkHTML;
     /*'<li><a href="#tag-" class=""><span>' + tag + ' ' + '(' + allTags[tag] + ')' + '</span></a></li>';
   }
