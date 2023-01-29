@@ -1,5 +1,10 @@
 'use strict';
 
+const templates = {
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
+};
+
+
 function titleClickHandler(event){
   event.preventDefault();
   const clickedElement = this;
@@ -78,6 +83,9 @@ function generateTitleLinks(customSelector = ''){
     /* create HTML of the link */
 
     const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+
+    //const linkHTMLData = {id: articleId, title: articleTitle};
+    //const linkHTML = templates.articleLink(linkHTMLData);
 
     /* insert link into titleList */
 
@@ -240,7 +248,7 @@ function tagClickHandler(event){
 function addClickListenersToTags(){
   /* find all links to tags */
 
-  const links = document.querySelectorAll('.list a');
+  const links = document.querySelectorAll('.post');
 
   /* START LOOP: for each link */
   for(let link of links){
@@ -307,11 +315,11 @@ function generateAuthors() {
     /*for(let tag of articleTagsArray) {
 
       /* [NEW] check if this link is NOT already in allTags */
-    if(!allAuthors.hasOwnProperty(author)) {
+    if(!allAuthors.hasOwnProperty(articleAuthors)) {
       /* [NEW] add tag to allTags object */
-      allAuthors[author] = 1;
+      allAuthors[articleAuthors] = 1;
     } else {
-      allAuthors[author]++;
+      allAuthors[articleAuthors]++;
     }
 
     /* generate HTML of the link */ 
@@ -396,7 +404,7 @@ function authorClickHandler(event){
 function addClickListenersToAuthors(){
   /* find all links to tags */
 
-  const links = document.querySelectorAll('.post-author a');
+  const links = document.querySelectorAll('.post');
 
   /* START LOOP: for each link */
   for(let link of links){
