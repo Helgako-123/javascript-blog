@@ -1,7 +1,9 @@
 'use strict';
 
 const templates = {
-  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+  articleEndLink: Handlebars.compile(document.querySelector('#template-end-article-link').innerHTML),
+  authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
 };
 
 
@@ -82,10 +84,10 @@ function generateTitleLinks(customSelector = ''){
 
     /* create HTML of the link */
 
-    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+         //const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
 
-    //const linkHTMLData = {id: articleId, title: articleTitle};
-    //const linkHTML = templates.articleLink(linkHTMLData);
+    const linkHTMLData = {id: articleId, title: articleTitle};
+    const linkHTML = templates.articleLink(linkHTMLData);
 
     /* insert link into titleList */
 
@@ -159,7 +161,10 @@ function generateTags() {
     for(let tag of articleTagsArray) {
 
       /* generate HTML of the link */ 
-      const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+           //const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+
+      const linkHTMLData = {id: tag, title: tag};
+      const linkHTML = templates.articleEndLink(linkHTMLData);
       
       /* add generated code to html variable */
       html = html + ' ' + linkHTML;
@@ -323,7 +328,10 @@ function generateAuthors() {
     }
 
     /* generate HTML of the link */ 
-    const linkHTML = '<a href="#author-' + articleAuthors + '">' + 'by ' +articleAuthors + '</a>';
+        //const linkHTML = '<a href="#author-' + articleAuthors + '">' + 'by ' + articleAuthors + '</a>';
+
+    const linkHTMLData = {id: articleAuthors, title: articleAuthors};
+    const linkHTML = templates.authorLink(linkHTMLData);
       
     /* add generated code to html variable */
     html = html + linkHTML;
