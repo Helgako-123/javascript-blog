@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #fff;
+  background: lightgrey;
   font-family: "Source Sans Pro", sans-serif;
   color: #444;
   font-weight: 300;
@@ -99,3 +99,31 @@ body {
 .post-tags p {
   margin: 0 10px 0 0;
 }/*# sourceMappingURL=style.css.map */
+
+.list.tags li {
+  display: inline-block;
+}
+
+.list.authors li {
+  display: inline-block;
+}
+
+.tag-size-1 {
+  font-size: 16px;
+}
+
+.tag-size-2 {
+  font-size: 20px;
+}
+
+.tag-size-3 {
+  font-size: 22px;
+}
+
+.tag-size-4 {
+  font-size: 24px;
+}
+
+.tag-size-5 {
+  font-size: 28px;
+}
